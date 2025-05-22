@@ -1,6 +1,8 @@
 package com.project.customerservice.model;
 
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,4 +36,14 @@ public class Customer {
     private String country;
     
     private String postalCode;
+private Integer loyaltyPoints = 0;
+    
+    @Enumerated(EnumType.STRING)
+    private LoyaltyTier loyaltyTier = LoyaltyTier.STANDARD;
+    
+    private LocalDateTime tierUpdatedAt;
+    
+    private Double lifetimePurchaseValue = 0.0;
+    
+    private Integer completedOrders = 0;
 }

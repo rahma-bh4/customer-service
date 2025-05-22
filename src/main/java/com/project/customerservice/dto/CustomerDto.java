@@ -1,9 +1,13 @@
 package com.project.customerservice.dto;
 
 
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
+import com.project.customerservice.model.LoyaltyTier;
+import java.time.LocalDateTime;
 
 @Data
 public class CustomerDto {
@@ -28,4 +32,18 @@ public class CustomerDto {
     private String country;
     
     private String postalCode;
+    
+    // Loyalty related fields
+    private Integer loyaltyPoints;
+    
+    private LoyaltyTier loyaltyTier;
+    
+    private LocalDateTime tierUpdatedAt;
+    
+    private Double lifetimePurchaseValue;
+    
+    private Integer completedOrders;
+    
+    // Helper field for discount info
+    private Double discountPercentage;
 }
